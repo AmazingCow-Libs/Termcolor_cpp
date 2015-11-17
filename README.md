@@ -68,7 +68,7 @@ Here is very simple usage options:
 
 ##### Colored function:
 
-```
+``` c++
 #include "termcolor/termcolor.h"
 
 void f(const std::string &path)
@@ -85,7 +85,7 @@ void f(const std::string &path)
 
 ##### Stream :
 
-```
+``` c++
 #include "termcolor/termcolor.h"
 
 void f(const std::string &path)
@@ -101,7 +101,7 @@ void f(const std::string &path)
 
 ##### Functors :
 
-```
+``` c++
 #include "termcolor/termcolor.h"
 
 void f(const std::string &path)
