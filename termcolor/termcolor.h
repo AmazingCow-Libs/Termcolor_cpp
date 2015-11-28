@@ -42,15 +42,23 @@
 #ifndef __AmazingCow_TermColor_Cpp_termcolor_h__
 #define __AmazingCow_TermColor_Cpp_termcolor_h__
 
-#include <string>
+//std
 #include <ostream>
-#include <vector>
 #include <sstream>
+#include <string>
+#include <vector>
 
 // Namespace Stuff //
 #define NS_TERMCOLOR_BEGIN namespace termcolor {
 #define NS_TERMCOLOR_END   }
 #define USING_NS_TERMCOLOR using namespace termcolor
+
+//The core version number.
+#define COW_TERMCOLOR_VERSION_MAJOR    "0"
+#define COW_TERMCOLOR_VERSION_MINOR    "1"
+#define COW_TERMCOLOR_VERSION_REVISION "0"
+
+#define COW_TERMCOLOR_VERSION "0.1.0"
 
 NS_TERMCOLOR_BEGIN
 
