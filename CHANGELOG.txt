@@ -1,2 +1,6 @@
 v0.1.0 [Nov 27 2015]
     Finish the basic implementation.
+
+v0.1.1 [Jan 21 2016]
+    Update the license headers.
+    Change the license to GPLv3.

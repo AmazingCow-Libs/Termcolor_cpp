@@ -119,7 +119,7 @@ void f(const std::string &path)
 ```
 
 ## License:
-This software is released under BSD-3.
+This software is released under GPLv3.
 
 ## TODO:
 Check the TODO file.
