@@ -3,17 +3,19 @@ Termcolor_cpp
 
 Made with <3 by [Amazing Cow](http://www.amazingcow.com).
 
-### Intro
+
+<!-- ####################################################################### -->
+
+## Intro
 
 This lib is a loosely clone of [python-termcolor](), an amazing python package 
 that ease in several orders of magnitude the process of adding colored output in
 terminals.
 
-You can read a post by [n2omatt](http://n2omatt.github.io) about the benefits 
-of coloring output - 
-[Termcolor - A very cool output coloring package for python.](https://n2omatt.github.io/programming/2015/11/08/python-package-termcolor.html)
 
-### Motivation
+<!-- ####################################################################### -->
+
+## Motivation
 
 The python-termcolor is amazing - simply amazing - it helps a lot creating cool
 cli programs and its usage is very intuitive and powerful.
@@ -22,7 +24,7 @@ An example:
 ``` python
 import termcolor;
 
-#Some stuf...
+#Some stuff...
 
 print "{} - Path is invalid ({})".format(termcolor.colored("[FATAL]", "red"),
                                          termcolor.colored(path, "magenta");
@@ -33,7 +35,9 @@ But we do a lot of C++ too and would be very nice do this kind of stuff in it.
 So we decide to create our own clone of python-termcolor.
 
 
-### Termcolor_cpp
+<!-- ####################################################################### -->
+
+## Termcolor_cpp
 
 Instead of being a 1:1 clone (this isn't even possible) we decide to add features
 that we think that is very useful. So while the overall idea is the same, the 
@@ -47,7 +51,9 @@ We can:
 and use it later, possible multiple times.
 
 
-### Installation
+<!-- ####################################################################### -->
+
+## Installation
 
 This lib is only two file (three counting the test file), so is very easy to 
 setup in various different scenarios.   
@@ -59,7 +65,10 @@ The most basic usage is:
 3. Setup your compiler include paths (```g++ -I/path/for/termcolor ...``` ).
 4. Include it and use... :)
 
-### Usage
+
+<!-- ####################################################################### -->
+
+## Usage
 
 Please check out the ```test/main.cpp``` for examples - Notice that this examples
 are very, very based on the python-termcolor examples.
@@ -118,11 +127,19 @@ void f(const std::string &path)
 
 ```
 
+<!-- ####################################################################### -->
+
 ## License:
 This software is released under GPLv3.
 
+
+<!-- ####################################################################### -->
+
 ## TODO:
 Check the TODO file.
+
+
+<!-- ####################################################################### -->
 
 ## Others:
 Check our repos and take a look at our [open source site](http://opensource.amazingcow.com).
