@@ -45,10 +45,42 @@
 USING_NS_TERMCOLOR;
 using namespace std;
 
+Config::ColorMode Config::colorMode = Config::ColorMode::Default;
+
+
 // Constants //
 constexpr const char *start_escape = "\033[";
 constexpr const char *end_escape   = "m";
 constexpr const char *reset_str    = "\033[0m";
+
+// Helper Functions //
+bool should_put_color()
+{
+    if(Config::colorMode == Config::ColorMode::Never)
+        return false;
+    else if(Config::colorMode == Config::ColorMode::Always)
+        return true;
+
+    else //if(colorMode == ColorMode::OnlyIfTerminal)
+    {
+        if(isatty(fileno(stdout)))
+            return true;
+    }
+
+    return false;
+}
+
+void put_color(std::ostream &os, int color)
+{
+
+    if(!should_put_color())
+        return;
+
+    os << start_escape << color << end_escape;
+}
+
+// Config //
+// Config::colorMode = Config::ColorMode::Default;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,123 +89,125 @@ constexpr const char *reset_str    = "\033[0m";
 // Foreground Colors //
 std::ostream& termcolor::grey(std::ostream &os)
 {
-    os << start_escape << termcolor::GREY << end_escape;
+    put_color(os, termcolor::GREY);
     return os;
 }
 std::ostream& termcolor::red(std::ostream &os)
 {
-    os << start_escape << termcolor::RED << end_escape;
+    put_color(os, termcolor::RED);
     return os;
 }
 std::ostream& termcolor::green(std::ostream &os)
 {
-    os << start_escape << termcolor::GREEN << end_escape;
+    put_color(os, termcolor::GREEN);
     return os;
 }
 std::ostream& termcolor::yellow(std::ostream &os)
 {
-    os << start_escape << termcolor::YELLOW << end_escape;
+    put_color(os, termcolor::YELLOW);
     return os;
 }
 std::ostream& termcolor::blue(std::ostream &os)
 {
-    os << start_escape << termcolor::BLUE << end_escape;
+    put_color(os, termcolor::BLUE);
     return os;
 }
 std::ostream& termcolor::magenta(std::ostream &os)
 {
-    os << start_escape << termcolor::MAGENTA << end_escape;
+    put_color(os, termcolor::MAGENTA);
     return os;
 }
 std::ostream& termcolor::cyan(std::ostream &os)
 {
-    os << start_escape << termcolor::CYAN << end_escape;
+    put_color(os, termcolor::CYAN);
     return os;
 }
 std::ostream& termcolor::white(std::ostream &os)
 {
-    os << start_escape << termcolor::WHITE << end_escape;
+    put_color(os, termcolor::WHITE);
     return os;
 }
 
 // Background Colors //
 std::ostream& termcolor::on_grey(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_GREY << end_escape;
+    put_color(os, termcolor::ON_GREY);
     return os;
 }
 std::ostream& termcolor::on_red(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_RED << end_escape;
+    put_color(os, termcolor::ON_RED);
     return os;
 }
 std::ostream& termcolor::on_green(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_GREEN << end_escape;
+    put_color(os, termcolor::ON_GREEN);
     return os;
 }
 std::ostream& termcolor::on_yellow(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_YELLOW << end_escape;
+    put_color(os, termcolor::ON_YELLOW);
     return os;
 }
 std::ostream& termcolor::on_blue(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_BLUE << end_escape;
+    put_color(os, termcolor::ON_BLUE);
     return os;
 }
 std::ostream& termcolor::on_magenta(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_MAGENTA << end_escape;
+    put_color(os, termcolor::ON_MAGENTA);
     return os;
 }
 std::ostream& termcolor::on_cyan(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_CYAN << end_escape;
+    put_color(os, termcolor::ON_CYAN);
     return os;
 }
 std::ostream& termcolor::on_white(std::ostream &os)
 {
-    os << start_escape << termcolor::ON_WHITE << end_escape;
+    put_color(os, termcolor::ON_WHITE);
     return os;
 }
 
 // Attributes //
 std::ostream& termcolor::blink(std::ostream &os)
 {
-    os << start_escape << termcolor::BLINK << end_escape;
+    put_color(os, termcolor::BLINK);
     return os;
 }
 std::ostream& termcolor::bold(std::ostream &os)
 {
-    os << start_escape << termcolor::BOLD << end_escape;
+    put_color(os, termcolor::BOLD);
     return os;
 }
 std::ostream& termcolor::concealed(std::ostream &os)
 {
-    os << start_escape << termcolor::CONCEALED << end_escape;
+    put_color(os, termcolor::CONCEALED);
     return os;
 }
 std::ostream& termcolor::dark(std::ostream &os)
 {
-    os << start_escape << termcolor::DARK << end_escape;
+    put_color(os, termcolor::DARK);
     return os;
 }
 std::ostream& termcolor::reverse(std::ostream &os)
 {
-    os << start_escape << termcolor::REVERSE << end_escape;
+    put_color(os, termcolor::REVERSE);
     return os;
 }
 std::ostream& termcolor::underline(std::ostream &os)
 {
-    os << start_escape << termcolor::UNDERLINE << end_escape;
+    put_color(os, termcolor::UNDERLINE);
     return os;
 }
 
 
 std::ostream& termcolor::reset(std::ostream &os)
 {
-    os << reset_str;
+    if(should_put_color())
+        os << reset_str;
+
     return os;
 }
 
@@ -196,14 +230,14 @@ std::string termcolor::colored(const std::string &str,
 
     for(auto attribute : attributes)
         if(attribute)
-            ss << start_escape << attribute << end_escape;
+             put_color(ss, attribute);
 
-    if(background) ss << start_escape << background << end_escape;
-    if(foreground) ss << start_escape << foreground << end_escape;
+    if(background) put_color(ss, background);
+    if(foreground) put_color(ss, foreground);
 
     ss << str;
 
-    ss << reset_str;
+    ss << termcolor::reset;
 
     return ss.str();
 }
