@@ -40,13 +40,15 @@
 
 //Header
 #include "termcolor.h"
+//std
+ #include <unistd.h>
 
 //Usings
 USING_NS_TERMCOLOR;
 using namespace std;
 
+// Config //
 Config::ColorMode Config::colorMode = Config::ColorMode::Default;
-
 
 // Constants //
 constexpr const char *start_escape = "\033[";
@@ -78,9 +80,6 @@ void put_color(std::ostream &os, int color)
 
     os << start_escape << color << end_escape;
 }
-
-// Config //
-// Config::colorMode = Config::ColorMode::Default;
 
 
 ////////////////////////////////////////////////////////////////////////////////
