@@ -376,6 +376,12 @@ void test_functor_mixings()
 int main(int argc, const char * argv[])
 {
 
+    int option = 0;
+    if(argc > 1)
+        option = atoi(argv[1]);
+
+    termcolor::Config::colorMode = static_cast<termcolor::Config::ColorMode>(option);
+
     test_colored_basic_colors();
     test_colored_highlights  ();
     test_colored_attributes  ();
