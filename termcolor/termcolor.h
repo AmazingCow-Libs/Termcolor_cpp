@@ -62,7 +62,7 @@
 NS_TERMCOLOR_BEGIN
 
 ////////////////////////////////////////////////////////////////////////////////
-// Constants                                                                  //
+// Constants / Enums                                                          //
 ////////////////////////////////////////////////////////////////////////////////
 constexpr int NONE = 0;
 
@@ -93,6 +93,24 @@ constexpr int CONCEALED = 8;
 constexpr int DARK      = 2;
 constexpr int REVERSE   = 7;
 constexpr int UNDERLINE = 4;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Config                                                                     //
+////////////////////////////////////////////////////////////////////////////////
+class Config
+{
+ public:
+    enum class ColorMode
+    {
+        OnlyIfTerminal = 0,
+        Always         = 1,
+        Never          = 2,
+        Default        = OnlyIfTerminal
+    };
+
+    static ColorMode colorMode;
+ };
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -129,7 +147,6 @@ std::ostream& underline(std::ostream &os);
 std::ostream& reset(std::ostream &os);
 
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Colored Function                                                           //
 ////////////////////////////////////////////////////////////////////////////////
@@ -137,7 +154,6 @@ std::string colored(const std::string &str,
                     int foreground,
                     int background = termcolor::NONE,
                     const std::vector<int> &attributes = std::vector<int>());
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -169,4 +185,4 @@ private:
 
 NS_TERMCOLOR_END
 
-#endif /* defined(__AmazingCow_TermColor_Cpp_termcolor_h__) */
+#endif // defined(__AmazingCow_TermColor_Cpp_termcolor_h__) //
