@@ -4,3 +4,9 @@ v0.1.0 [Nov 27 2015]
 v0.1.1 [Jan 21 2016]
     Update the license headers.
     Change the license to GPLv3.
+
+v0.2.0 [Mar 22 2016]
+    Add a way to control if the coloring will be put on stream or not.
+    The default is ColorMode::OnlyIfTerminal so it will not impact the older
+    code and will do the "right" thing from now.
+
