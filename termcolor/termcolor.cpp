@@ -220,11 +220,10 @@ std::string termcolor::colored(const std::string &str,
                                int background,
                                const std::vector<int> &attributes)
 {
-    //COWTODO: Check what is better...
-    //COWTODO: 1 - stringstreams - Like we're doing now...
-    //COWTODO: 2 - sprintf - We can calculate the array size based in the options.
-    //COWTODO: 3 - String concat.
-
+    //COWHACK: Check what is better...
+    //COWHACK: 1 - stringstreams - Like we're doing now...
+    //COWHACK: 2 - sprintf - We can calculate the array size based in the options.
+    //COWHACK: 3 - String concat.
     std::stringstream ss;
 
     for(auto attribute : attributes)
