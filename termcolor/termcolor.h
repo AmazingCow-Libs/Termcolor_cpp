@@ -55,16 +55,17 @@
 //The core version number.
 #define COW_TERMCOLOR_VERSION_MAJOR    "0"
 #define COW_TERMCOLOR_VERSION_MINOR    "2"
-#define COW_TERMCOLOR_VERSION_REVISION "0"
+#define COW_TERMCOLOR_VERSION_REVISION "1"
 
-#define COW_TERMCOLOR_VERSION "0.2.0"
+#define COW_TERMCOLOR_VERSION "0.2.1"
 
 NS_TERMCOLOR_BEGIN
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constants / Enums                                                          //
 ////////////////////////////////////////////////////////////////////////////////
-constexpr int NONE = 0;
+constexpr int NONE  = 0;
+constexpr int RESET = 0;
 
 // Foreground Colors //
 constexpr int GREY    = 30;
@@ -93,6 +94,12 @@ constexpr int CONCEALED = 8;
 constexpr int DARK      = 2;
 constexpr int REVERSE   = 7;
 constexpr int UNDERLINE = 4;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Functions                                                                  //
+////////////////////////////////////////////////////////////////////////////////
+std::string codeToString(int code);
 
 
 ////////////////////////////////////////////////////////////////////////////////

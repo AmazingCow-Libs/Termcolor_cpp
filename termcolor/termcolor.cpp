@@ -81,6 +81,14 @@ void put_color(std::ostream &os, int color)
     os << start_escape << color << end_escape;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Functions                                                                  //
+////////////////////////////////////////////////////////////////////////////////
+std::string termcolor::codeToString(int code)
+{
+    return start_escape + std::to_string(code) + end_escape;
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // Stream Functions                                                           //
