@@ -375,7 +375,6 @@ void test_functor_mixings()
 
 int main(int argc, const char * argv[])
 {
-
     int option = 0;
     if(argc > 1)
         option = atoi(argv[1]);
@@ -395,7 +394,59 @@ int main(int argc, const char * argv[])
     test_functor_basic_colors();
     test_functor_highlights  ();
     test_functor_attributes  ();
-    test_stream_mixings     ();
+    test_stream_mixings      ();
+
+    cout << "Foreground sequences:" << endl;
+    for(auto i = termcolor::GREY; i <= termcolor::WHITE; ++i)
+    {
+        cout << termcolor::codeToString(i)
+             << " test "
+             << termcolor::codeToString(termcolor::RESET)
+             << endl;
+    }
+
+
+    cout << "Background sequences:" << endl;
+    for(auto i = termcolor::ON_GREY; i <= termcolor::ON_WHITE; ++i)
+    {
+        cout << termcolor::codeToString(i)
+             << " test "
+             << termcolor::codeToString(termcolor::RESET)
+             << endl;
+    }
+
+    cout << "Attributes sequences:" << endl;
+    cout << termcolor::codeToString(termcolor::BLINK)
+         << " test "
+         << termcolor::codeToString(termcolor::RESET)
+         << endl;
+
+    cout << termcolor::codeToString(termcolor::BOLD)
+         << " test "
+         << termcolor::codeToString(termcolor::RESET)
+         << endl;
+
+    cout << termcolor::codeToString(termcolor::CONCEALED)
+         << " test "
+         << termcolor::codeToString(termcolor::RESET)
+         << endl;
+
+    cout << termcolor::codeToString(termcolor::DARK)
+         << " test "
+         << termcolor::codeToString(termcolor::RESET)
+         << endl;
+
+    cout << termcolor::codeToString(termcolor::REVERSE)
+         << " test "
+         << termcolor::codeToString(termcolor::RESET)
+         << endl;
+
+    cout << termcolor::codeToString(termcolor::UNDERLINE)
+         << " test "
+         << termcolor::codeToString(termcolor::RESET)
+         << endl;
+
+
 
     return 0;
 }
