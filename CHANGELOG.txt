@@ -10,3 +10,7 @@ v0.2.0 [Mar 22 2016]
     The default is ColorMode::OnlyIfTerminal so it will not impact the older
     code and will do the "right" thing from now.
 
+
+v0.2.1 [Mar 31 2016]
+    Add a function to get the espace string from the
+    termcolor code. - Inspired in python colorama package.
