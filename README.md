@@ -90,8 +90,8 @@ void f(const std::string &path)
     //Functions are great because it "holds" the information about 
     //the coloring options, so it can be passed as arguments to functions,
     //be used multiple times, etc.
-    auto red_color     = termcolor::options(termcolor::RED);
-    auto magenta_color = termcolor::options(termcolor::MAGENTA);
+    auto red_color     = termcolor::Color(termcolor::RED);
+    auto magenta_color = termcolor::Color(termcolor::MAGENTA);
 
     cout << red_color("[FATAL]")
          << "- Path is invalid ("
