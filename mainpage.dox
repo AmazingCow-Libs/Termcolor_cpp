@@ -1,0 +1,30 @@
+/**
+@mainpage The Termcolor_cpp documentation.
+
+__Termcolor_cpp__ is a library to ease the terminal coloring.
+It was inspired by the amazing python's termcolor.
+
+With __Termcolor_cpp__ we can:
+
+- Use the colored function - _"Same"_ as the python-termcolor colored function. \n
+- Use stream modifiers - Like the std::hex, std::setw, etc...   \n
+- Use functor objects - This is nice because we can setup the coloring options
+and use it later, possible multiple times.
+
+
+You may find interesting take a look in:
+
+- @ref termcolor.h documentation - The interesting parts are there.
+\n\n
+
+- [Project Page](http:/opensource.amazingcow.com/libs/termcolor_cpp) \n
+- [Project GitHub](https://www.github.com/AmazingCow-Libs/Termcolor_cpp) \n
+- [cowtercolor_py](http:/opensource.amazingcow/libs/cowtermcolor_py) - A python
+  library inspired in __Termcolor_cpp__ but with many other features.
+- [AmazingCow Open Source Projects](http://opensource.amazingcow.com).
+
+
+You are __very welcomed__ to __share__ and __hack__ it.
+
+Thank you and we hope that you enjoy __Termcolor_cpp__.
+*/
