@@ -256,14 +256,14 @@ void test_functor_basic_colors()
 
     cout << "Test basic colors (functor):" << endl;
 
-    auto grey_color    = termcolor::options(termcolor::GREY   );
-    auto red_color     = termcolor::options(termcolor::RED    );
-    auto green_color   = termcolor::options(termcolor::GREEN  );
-    auto yellow_color  = termcolor::options(termcolor::YELLOW );
-    auto blue_color    = termcolor::options(termcolor::BLUE   );
-    auto magenta_color = termcolor::options(termcolor::MAGENTA);
-    auto cyan_color    = termcolor::options(termcolor::CYAN   );
-    auto white_color   = termcolor::options(termcolor::WHITE  );
+    auto grey_color    = termcolor::Color(termcolor::GREY   );
+    auto red_color     = termcolor::Color(termcolor::RED    );
+    auto green_color   = termcolor::Color(termcolor::GREEN  );
+    auto yellow_color  = termcolor::Color(termcolor::YELLOW );
+    auto blue_color    = termcolor::Color(termcolor::BLUE   );
+    auto magenta_color = termcolor::Color(termcolor::MAGENTA);
+    auto cyan_color    = termcolor::Color(termcolor::CYAN   );
+    auto white_color   = termcolor::Color(termcolor::WHITE  );
 
     cout << grey_color   ("Grey color"   ) << endl;
     cout << red_color    ("Red color"    ) << endl;
@@ -282,14 +282,14 @@ void test_functor_highlights()
 
     cout << "Test highlights (functor):" << endl;
 
-    auto on_grey_color    = termcolor::options(termcolor::NONE, termcolor::ON_GREY   );
-    auto on_red_color     = termcolor::options(termcolor::NONE, termcolor::ON_RED    );
-    auto on_green_color   = termcolor::options(termcolor::NONE, termcolor::ON_GREEN  );
-    auto on_yellow_color  = termcolor::options(termcolor::NONE, termcolor::ON_YELLOW );
-    auto on_blue_color    = termcolor::options(termcolor::NONE, termcolor::ON_BLUE   );
-    auto on_magenta_color = termcolor::options(termcolor::NONE, termcolor::ON_MAGENTA);
-    auto on_cyan_color    = termcolor::options(termcolor::NONE, termcolor::ON_CYAN   );
-    auto on_white_color   = termcolor::options(termcolor::NONE, termcolor::ON_WHITE  );
+    auto on_grey_color    = termcolor::Color(termcolor::NONE, termcolor::ON_GREY   );
+    auto on_red_color     = termcolor::Color(termcolor::NONE, termcolor::ON_RED    );
+    auto on_green_color   = termcolor::Color(termcolor::NONE, termcolor::ON_GREEN  );
+    auto on_yellow_color  = termcolor::Color(termcolor::NONE, termcolor::ON_YELLOW );
+    auto on_blue_color    = termcolor::Color(termcolor::NONE, termcolor::ON_BLUE   );
+    auto on_magenta_color = termcolor::Color(termcolor::NONE, termcolor::ON_MAGENTA);
+    auto on_cyan_color    = termcolor::Color(termcolor::NONE, termcolor::ON_CYAN   );
+    auto on_white_color   = termcolor::Color(termcolor::NONE, termcolor::ON_WHITE  );
 
     cout << on_grey_color   ("On grey color"   ) << endl;
     cout << on_red_color    ("On red color"    ) << endl;
@@ -308,37 +308,37 @@ void test_functor_attributes()
     cout << "Test attributes (functor):" << endl;
 
 
-    auto bold_grey_color = termcolor::options(termcolor::GREY,
+    auto bold_grey_color = termcolor::Color(termcolor::GREY,
                                               termcolor::NONE,
                                               {termcolor::BOLD});
 
-    auto dark_red_color = termcolor::options(termcolor::RED,
+    auto dark_red_color = termcolor::Color(termcolor::RED,
                                              termcolor::NONE,
                                              {termcolor::DARK});
 
-    auto underline_green_color = termcolor::options(termcolor::GREEN,
+    auto underline_green_color = termcolor::Color(termcolor::GREEN,
                                                     termcolor::NONE,
                                                     {termcolor::UNDERLINE});
 
-    auto blink_yellow_color = termcolor::options(termcolor::YELLOW,
+    auto blink_yellow_color = termcolor::Color(termcolor::YELLOW,
                                                  termcolor::NONE,
                                                  {termcolor::BLINK});
 
-    auto reversed_blue_color = termcolor::options(termcolor::BLUE,
+    auto reversed_blue_color = termcolor::Color(termcolor::BLUE,
                                                   termcolor::NONE,
                                                   {termcolor::REVERSE});
 
-    auto concealed_magenta_color = termcolor::options(termcolor::MAGENTA,
+    auto concealed_magenta_color = termcolor::Color(termcolor::MAGENTA,
                                                       termcolor::NONE,
                                                       {termcolor::CONCEALED});
 
-    auto bold_underline_reverse_cyan_color = termcolor::options(termcolor::CYAN,
+    auto bold_underline_reverse_cyan_color = termcolor::Color(termcolor::CYAN,
                                                                 termcolor::NONE,
                                                                 {termcolor::BOLD,
                                                                 termcolor::UNDERLINE,
                                                                 termcolor::REVERSE});
 
-    auto dark_blink_concealed_white_color = termcolor::options(termcolor::WHITE,
+    auto dark_blink_concealed_white_color = termcolor::Color(termcolor::WHITE,
                                                                termcolor::NONE,
                                                                {termcolor::DARK,
                                                                termcolor::BLINK,
@@ -361,11 +361,11 @@ void test_functor_mixings()
 
     cout << "Test mixing (functor):" << endl;
 
-    auto underline_red_on_grey_color = termcolor::options(termcolor::RED,
+    auto underline_red_on_grey_color = termcolor::Color(termcolor::RED,
                                                           termcolor::ON_GREY,
                                                           {termcolor::UNDERLINE});
 
-    auto reversed_green_on_red_color = termcolor::options(termcolor::GREEN,
+    auto reversed_green_on_red_color = termcolor::Color(termcolor::GREEN,
                                                           termcolor::ON_RED,
                                                           {termcolor::REVERSE});
 
@@ -395,6 +395,7 @@ int main(int argc, const char * argv[])
     test_functor_highlights  ();
     test_functor_attributes  ();
     test_stream_mixings      ();
+
 
     cout << "Foreground sequences:" << endl;
     for(auto i = termcolor::GREY; i <= termcolor::WHITE; ++i)
@@ -445,7 +446,6 @@ int main(int argc, const char * argv[])
          << " test "
          << termcolor::codeToString(termcolor::RESET)
          << endl;
-
 
 
     return 0;
