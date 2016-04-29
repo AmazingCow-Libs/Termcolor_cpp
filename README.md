@@ -8,7 +8,7 @@
 
 ## Project website:
 
-[opensource.amazingcow.com/libs/termcolor_cpp](http:/opensource.amazingcow/libs/termcolor_cpp)
+[opensource.amazingcow.com/libs/termcolor_cpp](http:/opensource.amazingcow.com/libs/termcolor_cpp)
 
 
 
@@ -46,6 +46,9 @@ As usual, you are **very welcomed** to **share** and **hack** it.
 
 
 ## Examples:
+
+There are some examples in ```test/main.cpp``` file, but here is a brief
+usage of ```Termcolor_cpp```:
 
 ### Colored function:
 
