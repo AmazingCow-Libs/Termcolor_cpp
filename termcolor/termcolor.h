@@ -54,10 +54,11 @@
 
 //The core version number.
 #define COW_TERMCOLOR_VERSION_MAJOR    "0"
-#define COW_TERMCOLOR_VERSION_MINOR    "2"
-#define COW_TERMCOLOR_VERSION_REVISION "1"
+#define COW_TERMCOLOR_VERSION_MINOR    "3"
+#define COW_TERMCOLOR_VERSION_REVISION "0"
 
-#define COW_TERMCOLOR_VERSION "0.2.1"
+#define COW_TERMCOLOR_VERSION "0.3.0"
+
 
 NS_TERMCOLOR_BEGIN
 
@@ -260,7 +261,7 @@ std::ostream& reset(std::ostream &os);
 ///@brief Builds the colored output in one function. \n
 ///       It will put the foreground color, then the background and after all
 ///       the attributes if there are any.
-///@param str - The string that will be colored.
+///@param str        - The string that will be colored.
 ///@param foreground - A valid foreground color code. (Mandatory)
 ///@param background - A valid background color code. (Optional)
 ///@param attributes - A valid attributes codes. (Optional)
@@ -274,14 +275,31 @@ std::string colored(const std::string &str,
                     const std::vector<int> &attributes = std::vector<int>());
 
 
+
 ////////////////////////////////////////////////////////////////////////////////
 // Functor Class                                                              //
 ////////////////////////////////////////////////////////////////////////////////
+///@brief Holds a set of coloring parameters into a nice object. \n
+///       This enables you group a set of different parameters
+///       and reuse them with ease.
+///@code For Example:
+///    auto greyOnRedBlinking      = Color(GREY, RED, {BLINK});
+///    auto redOnBlueBoldUnderline = Color(GREY, RED, {BOLD, UNDERLINE});
 ///
-class options
+///    cout << greyOnRedBlinking      ("Hi there..."   ) << endl;
+///    cout << redOnBlueBoldUnderline ("I <3 termcolor") << endl;
+///@endcode
+class Color
 {
 public:
-    options(int foreground,
+    ///@brief Basic constructor.
+    ///@param foreground - A valid foreground color code. (Mandatory)
+    ///@param background - A valid background color code. (Optional)
+    ///@param attributes - A valid attributes codes. (Optional)
+    ///@warning This function will not check the validity of the color codes,
+    ///so is user's responsibility to ensure that them are valid. \n
+    ///The best bet is use the termcolor constants.
+    Color(int foreground,
           int background = termcolor::NONE,
           const std::vector<int> &attributes = std::vector<int>()) :
         m_foreground(foreground),
@@ -291,6 +309,11 @@ public:
         //Empty...
     }
 
+    ///@brief Makes the object callable - It will apply
+    ///       the foreground colors, next the background colors
+    ///       and after that the attributes.
+    ///@param str - The string that will be colored.
+    ///@note This function is affected by the value of Config.colorMode.
     std::string operator ()(const std::string &str)
     {
         return termcolor::colored(str, m_foreground, m_background, m_attributes);
@@ -301,8 +324,6 @@ private:
     int              m_background;
     std::vector<int> m_attributes;
 };
-
-
 
 
 NS_TERMCOLOR_END
