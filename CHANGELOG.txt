@@ -1,16 +1,46 @@
-v0.1.0 [Nov 27 2015]
-    Finish the basic implementation.
++------------------------------------------------------------------------------+
+| Version 0.3.x                                                                |
++------------------------------------------------------------------------------+
+v0.3.0 - May 4, 2016
+-- General --
+    - New README.
+    - Updated CHANGELOG.
+    - Add documentation.
+    - Add doxygen stuff.
+    - [API] option class, nows is Color.
 
-v0.1.1 [Jan 21 2016]
-    Update the license headers.
-    Change the license to GPLv3.
+-- Info Files --
+    README.md
+        - Rewrite the README to consistency with other
+          Amazing Cow's READMEs.
 
+-- Others --
+    Add the doxygen folder to gitignore.
+    [Codeblocks] - Update the ide status.
+    core - Remove unneeded file.
+
+
++------------------------------------------------------------------------------+
+| Version 0.2.x                                                                |
++------------------------------------------------------------------------------+
+v0.2.1 [Mar 31 2016]
+    Add a function to get the espace string from the
+    termcolor code. - Inspired in python colorama package.
+
+--------------------------------------------------------------------------------
 v0.2.0 [Mar 22 2016]
     Add a way to control if the coloring will be put on stream or not.
     The default is ColorMode::OnlyIfTerminal so it will not impact the older
     code and will do the "right" thing from now.
 
 
-v0.2.1 [Mar 31 2016]
-    Add a function to get the espace string from the
-    termcolor code. - Inspired in python colorama package.
++------------------------------------------------------------------------------+
+| Version 0.1.x                                                                |
++------------------------------------------------------------------------------+
+v0.1.1 [Jan 21 2016]
+    Update the license headers.
+    Change the license to GPLv3.
+
+--------------------------------------------------------------------------------
+v0.1.0 [Nov 27 2015]
+    Finish the basic implementation.
