@@ -1,0 +1,11 @@
+Title:
+    libtermcolor
+Description:
+    Library to ease the terminal coloring, inspired by the python's termcolor
+URL:
+    Github, https://github.com/AmazingCow-Libs/libtermcolor
+Owner:
+    AmazingCow Labs
+Section:
+    Libs
+
