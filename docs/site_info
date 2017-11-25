@@ -4,6 +4,7 @@ Description:
     Library to ease the terminal coloring, inspired by the python's termcolor
 URL:
     Github, https://github.com/AmazingCow-Libs/libtermcolor
+    Docs,   http://amazingcow.com/docs/libtermcolor/
 Owner:
     AmazingCow Labs
 Section:
