@@ -32,7 +32,7 @@
 // Version                                                                    //
 //----------------------------------------------------------------------------//
 #define COW_TERMCOLOR_VERSION_MAJOR    "0"
-#define COW_TERMCOLOR_VERSION_MINOR    "3"
+#define COW_TERMCOLOR_VERSION_MINOR    "4"
 #define COW_TERMCOLOR_VERSION_REVISION "0"
 
-#define COW_TERMCOLOR_VERSION "0.3.0"
+#define COW_TERMCOLOR_VERSION "0.4.0"

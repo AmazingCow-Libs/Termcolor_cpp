@@ -1,4 +1,18 @@
 +------------------------------------------------------------------------------+
+| Version 0.4.x                                                                |
++------------------------------------------------------------------------------+
+v0.4.0 - Nov 24, 2017
+-- General --
+    - Change the structure of the code a lot.
+      Now everything is split into separated files corresponding its
+      functionality.
+    - Update the License Headers to the new AmazingCow ones.
+    - Add the Clion project.
+    - Update the Makefile to accommodate the new project structure.
+    - Add the docs folders.
+
+
++------------------------------------------------------------------------------+
 | Version 0.3.x                                                                |
 +------------------------------------------------------------------------------+
 v0.3.0 - May 4, 2016
