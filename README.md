@@ -1,17 +1,6 @@
-# Termcolor_cpp
+# libtermcolor
 
 **Made with <3 by [Amazing Cow](http://www.amazingcow.com).**
-
-
-
-<!-- ####################################################################### -->
-<!-- ####################################################################### -->
-
-## Websites:
-
-* [Termcolor_cpp Website](http://opensource.amazingcow.com/libs/termcolor_cpp/)
-* [Libs Website](http://opensource.amazingcow.com/libs/) - 
-The Amazing Cow's Libs site.
 
 
 <!-- ####################################################################### -->
@@ -19,11 +8,11 @@ The Amazing Cow's Libs site.
 
 ## Description:
 
-```Termcolor_cpp``` is a library to ease the terminal coloring.    
+```libtermcolor``` is a library to ease the terminal coloring.    
 It was inspired by the python's termcolor.
 
 
-#### With ```Termcolor_cpp``` we can:
+#### With ```libtermcolor``` we can:
 
 * Use the colored function - Ex: ```colored("MyString", RED, ON_BLUE, {BLINK});```
 * Use streams - Like ```cout << on_yellow << red << "MyString" << reset;```
@@ -33,7 +22,7 @@ and use it later, possible multiple times.
 
 #### Smart coloring:
 
-What is really nice in ```Termcolor_cpp``` and in [cowtermcolor_py](http://www.github.com/AmazingCow-Libs/cowtermcolor_py)
+What is really nice in ```libtermcolor``` and in [cowtermcolor_py](http://www.github.com/AmazingCow-Libs/cowtermcolor_py)
 is both libs _knows_ if the output is the terminal or not,  i.e. them knows
 if the ```stdout``` is attached to a ```tty```.
 
@@ -66,7 +55,7 @@ meaningless.
 So let the lib handle this for us... (Of course we have a way to override this
 if we want to).
 
-In ```Termcolor_cpp``` we have the ```Config::colorMode``` module 
+In ```libtermcolor``` we have the ```Config::colorMode``` module 
 object that defines the desired behavior.   
 For default it is ```Config::ColorMode::OnlyIfTerminal```, but can be 
 others values too (check the [examples](#Examples:) section).
@@ -96,8 +85,8 @@ As usual, you are **very welcomed** to **share** and **hack** it.
 
 ## Examples:
 
-There are some examples in ```Termcolor_cpp``` file, but here is a brief
-usage of ```Termcolor_cpp```:
+There are some examples in ```libtermcolor``` file, but here is a brief
+usage of ```libtermcolor```:
 
 ### Colored function:
  
@@ -155,7 +144,7 @@ void f(const std::string &path)
 ### Controlling the Coloring options:
 
 The ```Config::colorMode``` defines the behavior of coloring in
-```Termcolor_cpp``` .
+```libtermcolor``` .
 
 It has the following _constants_ that can be used:
 
@@ -214,9 +203,7 @@ cout <<  green << "I'm never colored :/" <<  reset << endl;
 We strive to make our source code fully documented.   
 While there are a myriad of comments, one might find useful take a look at:
 
-* [Project Website](http://opensource.amazingcow.com/libs/termcolor_cpp/).
-* [Doxgen Docs](http://opensource.amazingcow.com/libs/termcolor_cpp/doxygen/).
-* [A list of blog posts about the project](http://opensource.amazingcow.com/libs/termcolor_cpp/posts/).
+* [Doxgen Docs](http://www.amazingcow.com/libtermcolor/docs/).
 
 Anyway if you didn't understand something let us know sending a mail to  
 [help_opensource@amazingcow.com]() with the subject filled with the
@@ -229,7 +216,7 @@ name of this repo.
 
 ## Dependencies:
 
-* There is no dependency for **termcolor_cpp**
+* There is no dependency for **libtermcolor**
 
 
 
@@ -267,4 +254,4 @@ That's gonna give you all things to do :D.
 ## Others:
 
 Check our repos and take a look at our 
-[open source site](http://opensource.amazingcow.com).
+[floss site](http://floss.amazingcow.com).
