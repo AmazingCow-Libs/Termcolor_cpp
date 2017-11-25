@@ -7,24 +7,25 @@
 //                    |   _   ||     |_ |       ||   _   |                    //
 //                    |__| |__||_______||_______||__| |__|                    //
 //                             www.amazingcow.com                             //
-//  File      : termcolor.h                                                   //
+//  File      : Config.cpp                                                    //
 //  Project   : libtermcolor                                                  //
-//  Date      : Nov 17, 2015                                                  //
+//  Date      : Nov 24, 2017                                                  //
 //  License   : GPLv3                                                         //
 //  Author    : n2omatt <n2omatt@amazingcow.com>                              //
-//  Copyright : AmazingCow - 2015 - 2017                                      //
+//  Copyright : AmazingCow - 2017                                             //
 //                                                                            //
 //  Description :                                                             //
 //                                                                            //
 //---------------------------------------------------------------------------~//
 
-#pragma once
+// Header
+#include "../include/Config.h"
+
+// Usings
+USING_NS_TERMCOLOR;
+
 
 //----------------------------------------------------------------------------//
-// Export Headers                                                             //
+// Variables                                                                  //
 //----------------------------------------------------------------------------//
-#include "include/Color.h"
-#include "include/Config.h"
-#include "include/Constants.h"
-#include "include/Functions.h"
-#include "include/termcolor_Utils.h"
+Config::ColorMode Config::colorMode = Config::ColorMode::Default;

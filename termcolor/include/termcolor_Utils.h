@@ -7,9 +7,9 @@
 //                    |   _   ||     |_ |       ||   _   |                    //
 //                    |__| |__||_______||_______||__| |__|                    //
 //                             www.amazingcow.com                             //
-//  File      : termcolor.h                                                   //
+//  File      : termcolor_Utils.h                                             //
 //  Project   : libtermcolor                                                  //
-//  Date      : Nov 17, 2015                                                  //
+//  Date      : Nov 24, 2017                                                  //
 //  License   : GPLv3                                                         //
 //  Author    : n2omatt <n2omatt@amazingcow.com>                              //
 //  Copyright : AmazingCow - 2015 - 2017                                      //
@@ -21,10 +21,18 @@
 #pragma once
 
 //----------------------------------------------------------------------------//
-// Export Headers                                                             //
+// Namespaces                                                                 //
 //----------------------------------------------------------------------------//
-#include "include/Color.h"
-#include "include/Config.h"
-#include "include/Constants.h"
-#include "include/Functions.h"
-#include "include/termcolor_Utils.h"
+#define NS_TERMCOLOR_BEGIN namespace termcolor {
+#define NS_TERMCOLOR_END   }
+#define USING_NS_TERMCOLOR using namespace termcolor
+
+
+//----------------------------------------------------------------------------//
+// Version                                                                    //
+//----------------------------------------------------------------------------//
+#define COW_TERMCOLOR_VERSION_MAJOR    "0"
+#define COW_TERMCOLOR_VERSION_MINOR    "3"
+#define COW_TERMCOLOR_VERSION_REVISION "0"
+
+#define COW_TERMCOLOR_VERSION "0.3.0"
