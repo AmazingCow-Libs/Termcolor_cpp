@@ -64,7 +64,7 @@ bool should_put_color()
         return true;
 
     //--------------------------------------------------------------------------
-    // Check if we're on terminal to put the coloers.
+    // Check if we're on terminal to put the colors.
     if(isatty(fileno(stdout)) == 1)
         return true;
 
