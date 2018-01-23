@@ -20,11 +20,11 @@
 
 // Header
 #include "../include/Functions.h"
-// C
-#include <unistd.h>
 // std
 #include <cstdio>
 #include <sstream>
+// Amazing Cow Libs
+#include "acow/nt_posix.h"
 // libtermcolor
 #include "../include/Config.h"
 
