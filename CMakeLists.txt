@@ -40,4 +40,4 @@ target_include_directories(libtermcolor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 ##------------------------------------------------------------------------------
 ## Dependencies.
-target_link_libraries(libtermcolor LINK_PUBLIC acow_nt_posix)
+target_link_libraries(libtermcolor LINK_PUBLIC acow_posix_goodies)
